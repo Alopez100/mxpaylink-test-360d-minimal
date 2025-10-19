@@ -169,3 +169,5 @@ app.listen(PORT, () => {
     console.log(`Webhook URL: https://<tu-dominio>.onrender.com/webhook`);
     console.log(`Test Send URL: https://<tu-dominio>.onrender.com/send-test?phone=5213311296199&msg=Hola%20de%20prueba`);
 });
+
+// Cambio insignificante para forzar nuevo deploy
