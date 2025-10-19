@@ -1,0 +1,13 @@
+{
+  "name": "test-360d-simple",
+  "version": "1.0.0",
+  "description": "Ejemplo minimo para testear envio de mensajes con 360Dialog",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  }
+}
