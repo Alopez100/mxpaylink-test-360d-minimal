@@ -1,7 +1,7 @@
 // app.js
 const express = require('express');
 const axios = require('axios');
-require('dotenv').config();
+// require('dotenv').config(); // REMOVIDO: Ya no se necesita dotenv, las variables se cargan en Render
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   });
 });
 
-// Variables de entorno
+// Variables de entorno (ahora se cargan directamente desde el entorno de Render)
 const API_URL = process.env.WHATSAPP_API_BASE_URL;
 const API_TOKEN = process.env.WHATSAPP_TOKEN;
 const PHONE_ID = process.env.WHATSAPP_PHONE_ID;
@@ -170,4 +170,4 @@ app.listen(PORT, () => {
     console.log(`Test Send URL: https://<tu-dominio>.onrender.com/send-test?phone=5213311296199&msg=Hola%20de%20prueba`);
 });
 
-// Cambio insignificante para forzar nuevo deploy
+// // Cambio insignificante para forzar nuevo deploy (COMENTADO/ELIMINADO)
