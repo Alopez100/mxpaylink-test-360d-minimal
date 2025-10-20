@@ -6,18 +6,10 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Middleware para parsear JSON y manejar rawBody para webhooks
+// Middleware para parsear JSON
+// Este middleware es suficiente para manejar las solicitudes POST de webhook
+// y la solicitud GET de validación de webhook.
 app.use(express.json());
-app.use((req, res, next) => {
-  let data = [];
-  req.on('data', chunk => {
-    data.push(chunk);
-  });
-  req.on('end', () => {
-    req.rawBody = Buffer.concat(data);
-    next();
-  });
-});
 
 // Variables de entorno (ahora se cargan directamente desde el entorno de Render)
 const API_URL = process.env.WHATSAPP_API_BASE_URL;
@@ -169,5 +161,3 @@ app.listen(PORT, () => {
     console.log(`Webhook URL: https://<tu-dominio>.onrender.com/webhook`);
     console.log(`Test Send URL: https://<tu-dominio>.onrender.com/send-test?phone=5213311296199&msg=Hola%20de%20prueba`);
 });
-
-// // Cambio insignificante para forzar nuevo deploy (COMENTADO/ELIMINADO)
